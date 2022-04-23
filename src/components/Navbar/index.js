@@ -8,7 +8,7 @@ const Navbar = () => {
         width: "100%",
         display: "flex",
         justifyContent: "center",
-        backgroundColor: "grey",
+        backgroundColor: "#008080",
         height: "40px",
       }}
     >

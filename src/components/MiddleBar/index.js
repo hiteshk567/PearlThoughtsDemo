@@ -1,49 +1,63 @@
-import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+// import React, { useState, useEffect } from "react";
+// import { useLocation } from "react-router-dom";
 
-import MiddleBar2 from "../MiddleBar2";
-import { Grid } from "@mui/material";
+// import MainContent from "../MainContent";
+// import { Grid } from "@mui/material";
 
-const MiddleBar = ({ data }) => {
-  const [apiData, setApiData] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("create");
+// const singleObject = (category) => {
+//   return JSON.parse(JSON.stringify({ enteredText: "", isValid: false }));
+// };
 
-  const location = useLocation();
-  console.log(location);
+// const intitalState = (data) => {
+//   let res = {};
+//   data &&
+//     data.categories &&
+//     data.categories.sub.forEach((category, index) => {
+//       res.category.title = singleObject(category);
+//     });
+//   return res;
+// };
 
-  useEffect(() => {
-    //make api call for that data
-    const { pathname } = location || {};
-    //base on pathname make api call
-    const data = [];
-    setApiData(data);
-  }, []);
+// const MiddleBar = ({ data }) => {
+//   const [apiData, setApiData] = useState([]);
+//   const [selectedCategory, setSelectedCategory] = useState("create");
+//   const [storyData, setStoryData] = useState({});
 
-  const handleClick = (category) => {
-    setSelectedCategory(category);
-  };
+//   const location = useLocation();
+//   console.log(location);
 
-  return (
-    <div>
-      <Grid container direction="row" xs={12}>
-        <Grid item xs={3}>
-          {data &&
-            data.categories &&
-            data.categories.length &&
-            data.categories.map((category) => (
-              <Grid item>
-                <button onClick={() => handleClick(category)}>
-                  {category}
-                </button>
-              </Grid>
-            ))}
-        </Grid>
-        <Grid item xs={9}>
-          <MiddleBar2 apiData={apiData} selectedCategory={selectedCategory} />
-        </Grid>
-      </Grid>
-    </div>
-  );
-};
+//   useEffect(() => {
+//     //make api call for that data
+//     const { pathname } = location || {};
+//     //base on pathname make api call
+//     const data = [];
+//     setApiData(data);
+//     setStoryData(intitalState(data.categories));
+//   }, []);
 
-export default MiddleBar;
+//   const handleClick = (category) => {
+//     setSelectedCategory(category);
+//   };
+
+//   return (
+//     <div>
+//       <Grid container direction="row" xs={12}>
+//         <Grid item xs={3}>
+//           <Grid item>
+//             <div onClick={() => handleClick("title")}>
+//               Title, Subhead and Image
+//             </div>
+//             <div onClick={() => handleClick("category")}>Select Category</div>
+//             <div onClick={() => handleClick("content")}>Body Content</div>
+//             <div onClick={() => handleClick("preview")}>Preview</div>
+//           </Grid>
+//         </Grid>
+//         <Grid item xs={9}>
+//           <MainContent apiData={apiData} selectedCategory={selectedCategory} />
+//         </Grid>
+//       </Grid>
+//     </div>
+//   );
+// };
+
+// export default MiddleBar;
